@@ -16,6 +16,14 @@ router.get("/client.js", (_, res) =>
 
 // connect to postgres
 
+const pool = new pg.Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "recipeguru",
+  password: "lol",
+  post: 5432,
+});
+
 router.get("/type", async (req, res) => {
   const { type } = req.query;
   console.log("get ingredients", type);
