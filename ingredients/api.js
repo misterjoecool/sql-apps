@@ -29,8 +29,11 @@ router.get("/type", async (req, res) => {
   console.log("get ingredients", type);
 
   // return all ingredients of a type
+  const { rows } = await pool.query(`SELECT * FROM ingredients WHERE type=$1`, [
+    type,
+  ]);
 
-  res.status(501).json({ status: "not implemented", rows: [] });
+  res.status(200).json({ status: "not implemented", rows: [] });
 });
 
 router.get("/search", async (req, res) => {
