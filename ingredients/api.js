@@ -21,7 +21,7 @@ const pool = new pg.Pool({
   host: "localhost",
   database: "recipeguru",
   password: "lol",
-  post: 5432,
+  port: 5432,
 });
 
 router.get("/type", async (req, res) => {
